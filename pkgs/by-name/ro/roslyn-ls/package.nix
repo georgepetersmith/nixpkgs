@@ -16,10 +16,9 @@ let
       sdk_6_0
       sdk_7_0
       sdk_8_0
-      sdk_9_0
     ];
   # need sdk on runtime as well
-  dotnet-runtime = dotnetCorePackages.sdk_9_0;
+  dotnet-runtime = dotnetCorePackages.sdk_8_0;
   rid = dotnetCorePackages.systemToDotnetRid stdenvNoCC.targetPlatform.system;
 
   project = "Microsoft.CodeAnalysis.LanguageServer";
