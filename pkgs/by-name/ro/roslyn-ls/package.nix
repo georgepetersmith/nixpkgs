@@ -27,18 +27,18 @@ in
 buildDotnetModule rec {
   inherit pname dotnet-sdk dotnet-runtime;
 
-  vsVersion = "2.49.25";
+  vsVersion = "2.57.28";
   src = fetchFromGitHub {
     owner = "dotnet";
     repo = "roslyn";
     rev = "VSCode-CSharp-${vsVersion}";
-    hash = "sha256-1amL+K6gf7qJtODxyBtaswhJSLbMrl2LqpmLAArNpW0=";
+    hash = "sha256-NhQBlWwbQAOvadRskuEdl/0yuYWe2xY2c2Hg+jQpe0Y=";
   };
 
   # versioned independently from vscode-csharp
   # "roslyn" in here:
   # https://github.com/dotnet/vscode-csharp/blob/main/package.json
-  version = "4.12.0-3.24470.4";
+  version = "4.13.0-2.24565.3";
   projectFile = "src/LanguageServer/${project}/${project}.csproj";
   useDotnetFromEnv = true;
   nugetDeps = ./deps.nix;
